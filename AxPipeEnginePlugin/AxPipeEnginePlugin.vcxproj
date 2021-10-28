@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7B7AEA7F-E277-46B7-8EDC-996F50A72660}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>AxPipeEnginePlugin</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2015_64</QtInstall>
+    <QtModules>core</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2015_64</QtInstall>
+    <QtModules>core</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\LearnCode\CloudCompare-2.10.3\libs\qCC_io;D:\LearnCode\CloudCompare-2.10.3\libs\qCC_db;D:\LearnCode\CloudCompare-2.10.3\libs\qCC_glWindow;D:\LearnCode\CloudCompare-2.10.3\CC\include;D:\LearnCode\CloudCompare-2.10.3\plugins;D:\LearnCode\CloudCompare-2.10.3\libs\CCFbo\include;D:\LearnCode\CloudCompare-2.10.3\qCC;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtCore;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtGui;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtOpenGL;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtWidgets;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtOpenGLExtensions;C:\sdkvc14\PCL\include;C:\sdkvc14\PCL\include\pcl-1.8;C:\sdkvc14\eigen-3.3.9;D:\LearnCode\CloudCompare-2.10.3\contrib\shapelib-1.3.0;C:\sdkvc14\boost_1_74_0;C:\sdkvc14\flann1.9.1\include;.\Symmetry;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\LearnCode\CloudCompare-2.10.3\build\CC\Debug;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_io\Debug;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_db\Debug;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_glWindow\Debug;D:\LearnCode\CloudCompare-2.10.3\build\qCC\Debug;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\lib;D:\LearnCode\CloudCompare-2.10.3\build\libs\CCFbo\Debug;C:\sdkvc14\PCL\lib;D:\LearnCode\CloudCompare-2.10.3\build\contrib\shapelib-1.3.0\Debug;C:\sdkvc14\boost_1_74_0\lib64-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CC_FBO_LIBd.lib;QCC_IO_LIBd.lib;QCC_GL_LIBd.lib;QCC_DB_LIBd.lib;CC_CORE_LIBd.lib;Qt5Widgetsd.lib;Qt5Guid.lib;Qt5Cored.lib;Qt5OpenGLd.lib;Qt5OpenGLExtensionsd.lib;pcl_segmentation_debug.lib;pcl_features_debug.lib;pcl_filters_debug.lib;pcl_search_debug.lib;pcl_octree_debug.lib;pcl_sample_consensus_debug.lib;pcl_ml_debug.lib;pcl_kdtree_debug.lib;pcl_io_debug.lib;pcl_common_debug.lib;pcl_io_ply_debug.lib;pcl_registration_debug.lib;pcl_surface_debug.lib;SHAPELIBd.lib;libboost_system-vc140-mt-gd-x64-1_74.lib;libboost_filesystem-vc140-mt-gd-x64-1_74.lib;libboost_thread-vc140-mt-gd-x64-1_74.lib;libboost_date_time-vc140-mt-gd-x64-1_74.lib;libboost_iostreams-vc140-mt-gd-x64-1_74.lib;libboost_chrono-vc140-mt-gd-x64-1_74.lib;libboost_atomic-vc140-mt-gd-x64-1_74.lib;libboost_regex-vc140-mt-gd-x64-1_74.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\LearnCode\CloudCompare-2.10.3\libs\qCC_io;D:\LearnCode\CloudCompare-2.10.3\libs\qCC_db;D:\LearnCode\CloudCompare-2.10.3\libs\qCC_glWindow;D:\LearnCode\CloudCompare-2.10.3\CC\include;D:\LearnCode\CloudCompare-2.10.3\plugins;D:\LearnCode\CloudCompare-2.10.3\libs\CCFbo\include;D:\LearnCode\CloudCompare-2.10.3\qCC;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtCore;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtGui;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtOpenGL;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtWidgets;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\include\QtOpenGLExtensions;C:\sdkvc14\PCL\include;C:\sdkvc14\PCL\include\pcl-1.8;C:\sdkvc14\eigen-3.3.9;D:\LearnCode\CloudCompare-2.10.3\contrib\shapelib-1.3.0;C:\sdkvc14\boost_1_74_0;C:\sdkvc14\flann1.9.1\include;.\Symmetry;$(Qt_INCLUDEPATH_);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\LearnCode\CloudCompare-2.10.3\build\CC\Release;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_io\Release;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_db\Release;D:\LearnCode\CloudCompare-2.10.3\build\libs\qCC_glWindow\Release;D:\LearnCode\CloudCompare-2.10.3\build\qCC\Release;C:\Qt\Qt5.6.3\5.6.3\msvc2015_64\lib;D:\LearnCode\CloudCompare-2.10.3\build\libs\CCFbo\Release;C:\sdkvc14\PCL\lib;D:\LearnCode\CloudCompare-2.10.3\build\contrib\shapelib-1.3.0\Release;C:\sdkvc14\boost_1_74_0\lib64-msvc-14.0;$(Qt_LIBPATH_);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CC_FBO_LIB.lib;QCC_IO_LIB.lib;QCC_GL_LIB.lib;QCC_DB_LIB.lib;CC_CORE_LIB.lib;Qt5Widgets.lib;Qt5Gui.lib;Qt5Core.lib;Qt5OpenGL.lib;Qt5OpenGLExtensions.lib;pcl_segmentation_release.lib;pcl_features_release.lib;pcl_filters_release.lib;pcl_search_release.lib;pcl_octree_release.lib;pcl_sample_consensus_release.lib;pcl_ml_release.lib;pcl_kdtree_release.lib;pcl_io_release.lib;pcl_common_release.lib;pcl_io_ply_release.lib;pcl_registration_release.lib;pcl_surface_release.lib;SHAPELIB.lib;libboost_system-vc140-mt-x64-1_74.lib;libboost_filesystem-vc140-mt-x64-1_74.lib;libboost_thread-vc140-mt-x64-1_74.lib;libboost_date_time-vc140-mt-x64-1_74.lib;libboost_iostreams-vc140-mt-x64-1_74.lib;libboost_chrono-vc140-mt-x64-1_74.lib;libboost_atomic-vc140-mt-x64-1_74.lib;libboost_regex-vc140-mt-x64-1_74.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>AXPIPEENGINEPLUGIN_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>AXPIPEENGINEPLUGIN_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AxImprovedMeanshift.cpp" />
+    <ClCompile Include="AxPipeEnginePlugin.cpp" />
+    <ClCompile Include="AxPipeLineTracking.cpp" />
+    <ClCompile Include="ccDefaultPluginInterface.cpp" />
+    <ClCompile Include="GlobeFunction.cpp" />
+    <ClCompile Include="Symmetry\AxSymmetryP2P.cpp" />
+    <ClCompile Include="UI\ccDlgImprovedMeanshift.cpp" />
+    <ClCompile Include="UI\ccDlgPipelineDetector.cpp" />
+    <ClInclude Include="AxImprovedMeanshift.h" />
+    <QtMoc Include="UI\ccDlgImprovedMeanshift.h" />
+    <QtMoc Include="AxPipeEnginePlugin.h" />
+    <ClInclude Include="axpipeengineplugin_global.h" />
+    <ClInclude Include="AxPipeLineTracking.h" />
+    <ClInclude Include="ccDefaultPluginInterface.h" />
+    <ClInclude Include="ccStdPluginInterface.h" />
+    <ClInclude Include="dataUtility.h" />
+    <ClInclude Include="GlobeFunction.h" />
+    <ClInclude Include="Symmetry\AxSymmetryP2P.h" />
+    <ClInclude Include="Symmetry\geometry.hpp" />
+    <ClInclude Include="Symmetry\math.hpp" />
+    <ClInclude Include="Symmetry\refinement_base_functor.hpp" />
+    <QtMoc Include="UI\ccDlgPipelineDetector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="info.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\dlgImprovedMeanshift.ui" />
+    <QtUic Include="UI\dlgPipelineDetector.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="qPipeEnginePlugin.qrc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

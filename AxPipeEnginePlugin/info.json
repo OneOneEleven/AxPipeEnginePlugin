@@ -1,0 +1,34 @@
+{
+	"type" : "Standard",
+	"name" : "PipeEnginePlugin",
+	"icon" : ":/CC/qPipeEnginePlugin/images/icon.png",
+	"description": "This is a description of the marvelous Example plugin. It does nothing.",
+	"authors" : [
+		{
+			"name" : "Fan Yang",
+			"email" : "yhlx125@163.com"
+		}
+	],
+	"maintainers" : [
+		{
+			"name" : "",
+			"email" : ""
+		},
+		{
+			"name" : "Example NoEmail"
+		}
+	],
+	"references" : [
+		{
+			"text" : "The unsuccessful self-treatment of a case of “writer's block”",
+			"url" : ""
+		},
+		{
+			"text" : "Sword swallowing and its side effects",
+			"url" : "http://www.bmj.com/content/333/7582/1285"
+		},
+		{
+			"text" : "I thought of creating this wonderful plugin while I was hiking up &#x26f0; Mont Blanc"
+		}
+	]
+}
